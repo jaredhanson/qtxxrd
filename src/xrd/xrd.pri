@@ -1,9 +1,9 @@
 HEADERS += \
-    $$PWD/xmlns.h \
     $$PWD/xrddocument.h \
-    $$PWD/xrdproperty.h
+    $$PWD/xrdproperty.h \
+    $$PWD/xrdxmlns.h
     
 SOURCES += \
-    $$PWD/xmlns.cpp \
     $$PWD/xrddocument.cpp \
-    $$PWD/xrdproperty.cpp
+    $$PWD/xrdproperty.cpp \
+    $$PWD/xrdxmlns.cpp

@@ -1,5 +1,5 @@
-#ifndef QTXXRD_XMLNS_H
-#define QTXXRD_XMLNS_H
+#ifndef QTXXRD_XRDXMLNS_H
+#define QTXXRD_XRDXMLNS_H
 
 #include "xrdglobal.h"
 
@@ -10,4 +10,4 @@ extern const char *kXrdPropertyXmlName;
 
 QTX_END_NAMESPACE
 
-#endif // QTXXRD_PROPERTY_H
+#endif // QTXXRD_XRDXMLNS_H

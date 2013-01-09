@@ -1,4 +1,4 @@
-#include "xmlns.h"
+#include "xrdxmlns.h"
 
 QTX_BEGIN_NAMESPACE
 
