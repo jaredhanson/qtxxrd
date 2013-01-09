@@ -1,0 +1,8 @@
+#ifndef QTXXRD_MODULE_H
+#define QTXXRD_MODULE_H
+
+#include "../src/xrd/xrdglobal.h"
+#include "../src/xrd/xrddocument.h"
+#include "../src/xrd/xrdproperty.h"
+
+#endif
