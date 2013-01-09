@@ -1,17 +1,18 @@
-#ifndef QTXXRD_PROPERTY_H
-#define QTXXRD_PROPERTY_H
+#ifndef QTXXRD_LINK_H
+#define QTXXRD_LINK_H
 
 #include "xrdglobal.h"
+#include "xrdproperty.h"
 #include <QtxXml>
 #include <QtCore>
 
 QTX_BEGIN_NAMESPACE
 
 
-class XrdPropertyPrivate;
+class XrdLinkPrivate;
 
-class XrdProperty : public QObject,
-                    public IXmlDeserializing
+class XrdLink : public QObject,
+                public IXmlDeserializing
 {
     Q_OBJECT
     
@@ -20,14 +21,21 @@ public:
     static QString xmlName();
     
 public:
-    XrdProperty(QObject *parent = 0);
-    ~XrdProperty();
+    XrdLink(QObject *parent = 0);
+    ~XrdLink();
     
+    QUrl href() const;
     QString type() const;
-    QString value() const;
+    QString rel() const;
+    QString uriTemplate() const;
+    QString title() const;
+    XrdPropertyList properties() const;
 
+    void setHref(const QUrl & url);
     void setType(const QString & type);
-    void setValue(const QString & value);
+    void setRel(const QString & rel);
+    void setUriTemplate(const QString & uriTemplate);
+    void setTitle(const QString & title);
     
     
     virtual IXmlDeserializing *deserializeXmlStartElement(XmlDeserializer *deserializer, const QStringRef & name, const QStringRef & namespaceUri, const QXmlStreamAttributes & attributes);
@@ -36,12 +44,10 @@ public:
     virtual void deserializeXmlCharacters(XmlDeserializer *deserializer, const QStringRef & text);
     
 protected:
-    XrdPropertyPrivate *d_ptr;
+    XrdLinkPrivate *d_ptr;
 private:
-    Q_DECLARE_PRIVATE(XrdProperty);
+    Q_DECLARE_PRIVATE(XrdLink);
 };
-
-typedef QList<XrdProperty *> XrdPropertyList;
 
 
 QTX_END_NAMESPACE
