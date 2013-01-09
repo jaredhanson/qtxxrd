@@ -6,6 +6,10 @@
 QTX_BEGIN_NAMESPACE
 
 extern const char *kXrdXmlNamespaceUri;
+extern const char *kXrdXmlName;
+extern const char *kXrdExpiresXmlName;
+extern const char *kXrdSubjectXmlName;
+extern const char *kXrdAliasXmlName;
 extern const char *kXrdPropertyXmlName;
 extern const char *kXrdLinkXmlName;
 extern const char *kXrdTitleXmlName;

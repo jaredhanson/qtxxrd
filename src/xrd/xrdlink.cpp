@@ -108,7 +108,7 @@ IXmlDeserializing *XrdLink::deserializeXmlStartElement(XmlDeserializer *deserial
     Q_UNUSED(attributes)
     
     if (namespaceUri == XrdProperty::xmlNamespaceUri() && name == XrdProperty::xmlName()) {
-        XrdProperty *prop = new XrdProperty();
+        XrdProperty *prop = new XrdProperty(this);
         d_ptr->addProperty(prop);
         return prop;
     }
@@ -121,7 +121,7 @@ void XrdLink::deserializeXmlEndElement(XmlDeserializer *deserializer, const QStr
     Q_UNUSED(deserializer)
     
     if (namespaceUri == xmlNamespaceUri() && name == kXrdTitleXmlName) {
-        setTitle(d_ptr->characters.trimmed());
+        d_ptr->title = d_ptr->characters.trimmed();
     }
 
     d_ptr->characters.clear();

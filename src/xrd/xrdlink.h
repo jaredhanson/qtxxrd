@@ -49,6 +49,8 @@ private:
     Q_DECLARE_PRIVATE(XrdLink);
 };
 
+typedef QList<XrdLink *> XrdLinkList;
+
 
 QTX_END_NAMESPACE
 
