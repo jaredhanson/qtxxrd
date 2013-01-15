@@ -73,6 +73,14 @@ void XrdProperty::deserializeXmlCharacters(XmlDeserializer *deserializer, const 
     d_ptr->value.append(text);
 }
 
+void XrdProperty::serializeXml(QXmlStreamWriter *writer) const
+{
+    writer->writeStartElement(XrdProperty::xmlNamespaceUri(), XrdProperty::xmlName());
+    writer->writeAttribute("type", d_ptr->type);
+    writer->writeCharacters(d_ptr->value);
+    writer->writeEndElement();
+}
+
 
 XrdPropertyPrivate::XrdPropertyPrivate()
 {

@@ -61,5 +61,17 @@ void tst_XrdProperty::deserializeXmlError(XmlDeserializer *deserializer, const Q
     Q_UNUSED(errorString)
 }
 
+void tst_XrdProperty::writeElement()
+{
+    QString output;
+    QXmlStreamWriter writer(&output);
+    XrdProperty property;
+    property.setType("http://spec.example.net/version");
+    property.setValue("1.0");
+    property.serializeXml(&writer);
+    
+    QCOMPARE(output, QString("<n1:Property xmlns:n1=\"http://docs.oasis-open.org/ns/xri/xrd-1.0\" type=\"http://spec.example.net/version\">1.0</n1:Property>"));
+}
+
 
 QTEST_APPLESS_MAIN(tst_XrdProperty)

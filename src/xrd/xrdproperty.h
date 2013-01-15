@@ -11,7 +11,8 @@ QTX_BEGIN_NAMESPACE
 class XrdPropertyPrivate;
 
 class XrdProperty : public QObject,
-                    public IXmlDeserializing
+                    public IXmlDeserializing,
+                    public IXmlSerializing
 {
     Q_OBJECT
     
@@ -32,6 +33,8 @@ public:
     
     virtual void deserializeXmlAttributes(XmlDeserializer *deserializer, const QXmlStreamAttributes & attributes);
     virtual void deserializeXmlCharacters(XmlDeserializer *deserializer, const QStringRef & text);
+    
+    virtual void serializeXml(QXmlStreamWriter *writer) const;
     
 protected:
     XrdPropertyPrivate *d_ptr;
