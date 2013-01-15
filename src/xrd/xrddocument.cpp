@@ -119,7 +119,7 @@ void XrdDocument::setExpires(const QDateTime & dateTime)
     d_ptr->expires = dateTime;
 }
 
-IXmlDeserializing *XrdDocument::deserializeXmlStartElement(XmlDeserializer *deserializer, const QStringRef & name, const QStringRef & namespaceUri, const QXmlStreamAttributes & attributes)
+IXmlDeserializing *XrdDocument::deserializeXmlStartElement(XmlDeserializer *deserializer, const QStringRef & namespaceUri, const QStringRef & name, const QXmlStreamAttributes & attributes)
 {
     Q_UNUSED(deserializer)
     Q_UNUSED(attributes)
@@ -137,7 +137,7 @@ IXmlDeserializing *XrdDocument::deserializeXmlStartElement(XmlDeserializer *dese
     return this;
 }
 
-void XrdDocument::deserializeXmlEndElement(XmlDeserializer *deserializer, const QStringRef & name, const QStringRef & namespaceUri)
+void XrdDocument::deserializeXmlEndElement(XmlDeserializer *deserializer, const QStringRef & namespaceUri, const QStringRef & name)
 {
     Q_UNUSED(deserializer)
     

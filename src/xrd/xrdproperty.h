@@ -30,8 +30,6 @@ public:
     void setValue(const QString & value);
     
     
-    virtual IXmlDeserializing *deserializeXmlStartElement(XmlDeserializer *deserializer, const QStringRef & name, const QStringRef & namespaceUri, const QXmlStreamAttributes & attributes);
-    virtual void deserializeXmlEndElement(XmlDeserializer *deserializer, const QStringRef & name, const QStringRef & namespaceUri);
     virtual void deserializeXmlAttributes(XmlDeserializer *deserializer, const QXmlStreamAttributes & attributes);
     virtual void deserializeXmlCharacters(XmlDeserializer *deserializer, const QStringRef & text);
     

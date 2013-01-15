@@ -36,7 +36,7 @@ void tst_XrdProperty::readElement()
     QCOMPARE(mProperty->value(), QString("1.0"));
 }
 
-IXmlDeserializing* tst_XrdProperty::deserializeXmlStart(XmlDeserializer *deserializer, const QStringRef & name, const QStringRef & namespaceUri, const QXmlStreamAttributes & attributes)
+IXmlDeserializing* tst_XrdProperty::deserializeXmlStart(XmlDeserializer *deserializer, const QStringRef & namespaceUri, const QStringRef & name, const QXmlStreamAttributes & attributes)
 {
     Q_UNUSED(deserializer)
     Q_UNUSED(attributes)

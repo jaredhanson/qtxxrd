@@ -59,23 +59,6 @@ void XrdProperty::setValue(const QString & value)
     d_ptr->value = value;
 }
 
-IXmlDeserializing *XrdProperty::deserializeXmlStartElement(XmlDeserializer *deserializer, const QStringRef & name, const QStringRef & namespaceUri, const QXmlStreamAttributes & attributes)
-{
-    Q_UNUSED(deserializer)
-    Q_UNUSED(name)
-    Q_UNUSED(namespaceUri)
-    Q_UNUSED(attributes)
-
-    return 0;
-}
-
-void XrdProperty::deserializeXmlEndElement(XmlDeserializer *deserializer, const QStringRef & name, const QStringRef & namespaceUri)
-{
-    Q_UNUSED(deserializer)
-    Q_UNUSED(name)
-    Q_UNUSED(namespaceUri)
-}
-
 void XrdProperty::deserializeXmlAttributes(XmlDeserializer *deserializer, const QXmlStreamAttributes & attributes)
 {
     Q_UNUSED(deserializer)

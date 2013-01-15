@@ -102,7 +102,7 @@ void XrdLink::setTitle(const QString & title)
     d_ptr->title = title;
 }
 
-IXmlDeserializing *XrdLink::deserializeXmlStartElement(XmlDeserializer *deserializer, const QStringRef & name, const QStringRef & namespaceUri, const QXmlStreamAttributes & attributes)
+IXmlDeserializing *XrdLink::deserializeXmlStartElement(XmlDeserializer *deserializer, const QStringRef & namespaceUri, const QStringRef & name, const QXmlStreamAttributes & attributes)
 {
     Q_UNUSED(deserializer)
     Q_UNUSED(attributes)
@@ -116,7 +116,7 @@ IXmlDeserializing *XrdLink::deserializeXmlStartElement(XmlDeserializer *deserial
     return this;
 }
 
-void XrdLink::deserializeXmlEndElement(XmlDeserializer *deserializer, const QStringRef & name, const QStringRef & namespaceUri)
+void XrdLink::deserializeXmlEndElement(XmlDeserializer *deserializer, const QStringRef & namespaceUri, const QStringRef & name)
 {
     Q_UNUSED(deserializer)
     
